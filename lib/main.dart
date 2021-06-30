@@ -15,6 +15,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: Drawer(
+        child: Container(
+          color: Colors.amber,
+          child: Column(
+            children: [],
+          ),
+        ),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Titre1"),
@@ -22,7 +30,11 @@ class MyApp extends StatelessWidget {
               icon: Icon(Icons.accessible_outlined), label: "Titre2"),
         ],
         backgroundColor: Colors.amber,
+        elevation: 10,
         iconSize: 25,
+        onTap: (value) {
+          print("Selection de $value");
+        },
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.amber,
